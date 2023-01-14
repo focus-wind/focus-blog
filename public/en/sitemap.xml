@@ -85,7 +85,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/post/blog/hugo/hugo.html"
+                href="/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -121,16 +121,6 @@
   </url><url>
     <loc>/en/categories/%E6%B5%8B%E8%AF%95.html</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/categories/%E6%B5%8B%E8%AF%95.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/categories/%E6%B5%8B%E8%AF%95.html"
-                />
   </url><url>
     <loc>/en/index.html</loc>
     <xhtml:link
