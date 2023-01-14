@@ -1,14 +1,14 @@
 ---
-title: Hugo
-description: 嗯好
+title: Hugo博客教程（一）
+description: 动态博客与静态博客的解释和Hugo的安装、环境配置
 date: 2023-01-09
 slug: blog/hugo
 image: 
 categories:
-    - Test
-    - 测试
+    - Blog
 tag:
-    - hugo
+    - HuGo
+    - Blog
 ---
 
 # Hugo博客教程（一）
