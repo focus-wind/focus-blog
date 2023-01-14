@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on 北溪入江流</title>
-        <link>/page.html</link>
+        <link>/page/</link>
         <description>Recent content in Pages on 北溪入江流</description>
         <generator>Hugo -- gohugo.io</generator>
         <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>关于</title>
-        <link>/about.html</link>
+        <link>/about/</link>
         <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
         
-        <guid>/about.html</guid>
+        <guid>/about/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;自述&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -36,18 +36,18 @@
         </item>
         <item>
         <title>归档</title>
-        <link>/archives.html</link>
+        <link>/archives/</link>
         <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
         
-        <guid>/archives.html</guid>
+        <guid>/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>友链</title>
-        <link>/links.html</link>
+        <link>/links/</link>
         <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
         
-        <guid>/links.html</guid>
+        <guid>/links/</guid>
         <description>&lt;h1 id=&#34;莫愁前路无知己天下谁人不识君&#34;&gt;莫愁前路无知己，天下谁人不识君&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;申请友链格式（评论区或向邮箱focus-wind@foxmail.com发信）：
@@ -63,10 +63,10 @@
         </item>
         <item>
         <title>搜索</title>
-        <link>/search.html</link>
+        <link>/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/search.html</guid>
+        <guid>/search/</guid>
         <description></description>
         </item>
         

@@ -1,5 +1,5 @@
-relativeURLs: true
-uglyURLs: true
+# relativeURLs: true
+# uglyURLs: true
 # 根目录的主机名或路径，本地使用不需要配置
 # baseurl: http://localhost
 # 当前主题

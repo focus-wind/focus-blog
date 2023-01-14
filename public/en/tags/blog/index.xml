@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Blog on focus</title>
-        <link>/en/tags/blog.html</link>
+        <link>/en/tags/blog/</link>
         <description>Recent content in Blog on focus</description>
         <generator>Hugo -- gohugo.io</generator>
         <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/en/tags/blog/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hugo博客教程（一）</title>
-        <link>/en/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80.html</link>
+        <link>/en/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80/</link>
         <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
         
-        <guid>/en/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80.html</guid>
+        <guid>/en/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80/</guid>
         <description>&lt;h1 id=&#34;hugo博客教程一&#34;&gt;Hugo博客教程（一）&lt;/h1&gt;
 &lt;h2 id=&#34;博客&#34;&gt;博客&lt;/h2&gt;
 &lt;h3 id=&#34;静态博客&#34;&gt;静态博客&lt;/h3&gt;

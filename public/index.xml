@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <lastBuildDate>Tue, 10 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hugo博客教程（一）</title>
-        <link>/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80.html</link>
+        <link>/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80/</link>
         <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
         
-        <guid>/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80.html</guid>
+        <guid>/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80/</guid>
         <description>&lt;h1 id=&#34;hugo博客教程一&#34;&gt;Hugo博客教程（一）&lt;/h1&gt;
 &lt;h2 id=&#34;博客&#34;&gt;博客&lt;/h2&gt;
 &lt;h3 id=&#34;静态博客&#34;&gt;静态博客&lt;/h3&gt;
@@ -184,10 +184,10 @@
         </item>
         <item>
         <title>关于</title>
-        <link>/about.html</link>
+        <link>/about/</link>
         <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
         
-        <guid>/about.html</guid>
+        <guid>/about/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;自述&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -213,18 +213,18 @@
         </item>
         <item>
         <title>归档</title>
-        <link>/archives.html</link>
+        <link>/archives/</link>
         <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
         
-        <guid>/archives.html</guid>
+        <guid>/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>友链</title>
-        <link>/links.html</link>
+        <link>/links/</link>
         <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
         
-        <guid>/links.html</guid>
+        <guid>/links/</guid>
         <description>&lt;h1 id=&#34;莫愁前路无知己天下谁人不识君&#34;&gt;莫愁前路无知己，天下谁人不识君&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;申请友链格式（评论区或向邮箱focus-wind@foxmail.com发信）：
@@ -248,10 +248,10 @@
         </item>
         <item>
         <title>搜索</title>
-        <link>/search.html</link>
+        <link>/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>/search.html</guid>
+        <guid>/search/</guid>
         <description></description>
         </item>
         

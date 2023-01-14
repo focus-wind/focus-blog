@@ -2,82 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/tags/blog.html</loc>
+    <loc>/tags/blog/</loc>
     <lastmod>2023-01-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/blog.html"
+                href="/en/tags/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/tags/blog.html"
+                href="/tags/blog/"
                 />
   </url><url>
-    <loc>/categories.html</loc>
+    <loc>/categories/</loc>
     <lastmod>2023-01-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/categories.html"
+                href="/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/categories.html"
+                href="/categories/"
                 />
   </url><url>
-    <loc>/tags/hugo.html</loc>
+    <loc>/tags/hugo/</loc>
     <lastmod>2023-01-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/hugo.html"
+                href="/en/tags/hugo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/tags/hugo.html"
+                href="/tags/hugo/"
                 />
   </url><url>
-    <loc>/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80.html</loc>
+    <loc>/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80/</loc>
     <lastmod>2023-01-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80.html"
+                href="/en/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80.html"
+                href="/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80/"
                 />
   </url><url>
-    <loc>/post.html</loc>
+    <loc>/post/</loc>
     <lastmod>2023-01-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/post.html"
+                href="/en/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/post.html"
+                href="/post/"
                 />
   </url><url>
-    <loc>/tags.html</loc>
+    <loc>/tags/</loc>
     <lastmod>2023-01-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags.html"
+                href="/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/tags.html"
+                href="/tags/"
                 />
   </url><url>
     <loc>/</loc>
@@ -93,69 +93,69 @@
                 href="/"
                 />
   </url><url>
-    <loc>/categories/blog.html</loc>
+    <loc>/categories/blog/</loc>
     <lastmod>2023-01-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/categories/blog.html"
+                href="/en/categories/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/categories/blog.html"
+                href="/categories/blog/"
                 />
   </url><url>
-    <loc>/page.html</loc>
+    <loc>/page/</loc>
     <lastmod>2023-01-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/page.html"
+                href="/en/page/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/page.html"
+                href="/page/"
                 />
   </url><url>
-    <loc>/about.html</loc>
+    <loc>/about/</loc>
     <lastmod>2023-01-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/about.html"
+                href="/en/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/about.html"
+                href="/about/"
                 />
   </url><url>
-    <loc>/archives.html</loc>
+    <loc>/archives/</loc>
     <lastmod>2023-01-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/archives.html"
+                href="/en/archives/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/archives.html"
+                href="/archives/"
                 />
   </url><url>
-    <loc>/links.html</loc>
+    <loc>/links/</loc>
     <lastmod>2023-01-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/links.html"
+                href="/en/links/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/links.html"
+                href="/links/"
                 />
   </url><url>
     <loc>/index.html</loc>
@@ -170,16 +170,16 @@
                 href="/index.html"
                 />
   </url><url>
-    <loc>/search.html</loc>
+    <loc>/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/search.html"
+                href="/en/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/search.html"
+                href="/search/"
                 />
   </url>
 </urlset>
