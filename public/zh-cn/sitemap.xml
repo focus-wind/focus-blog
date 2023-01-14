@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/categories/blog.html</loc>
+    <loc>/tags/blog.html</loc>
     <lastmod>2023-01-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/blog.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/tags/blog.html"
+                />
   </url><url>
     <loc>/categories.html</loc>
     <lastmod>2023-01-09T00:00:00+00:00</lastmod>
@@ -18,12 +28,25 @@
                 href="/categories.html"
                 />
   </url><url>
+    <loc>/tags/hugo.html</loc>
+    <lastmod>2023-01-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/hugo.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/tags/hugo.html"
+                />
+  </url><url>
     <loc>/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80.html</loc>
     <lastmod>2023-01-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/post/blog/hugo/hugo.html"
+                href="/en/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -57,6 +80,19 @@
                 href="/post.html"
                 />
   </url><url>
+    <loc>/tags.html</loc>
+    <lastmod>2023-01-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/tags.html"
+                />
+  </url><url>
     <loc>/</loc>
     <lastmod>2023-01-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -68,6 +104,19 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="/"
+                />
+  </url><url>
+    <loc>/categories/blog.html</loc>
+    <lastmod>2023-01-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories/blog.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/categories/blog.html"
                 />
   </url><url>
     <loc>/about.html</loc>
@@ -121,29 +170,7 @@
                 href="/index.html"
                 />
   </url><url>
-    <loc>/tags.html</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/tags.html"
-                />
-  </url><url>
     <loc>/categories/test.html</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/categories/test.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/categories/test.html"
-                />
   </url><url>
     <loc>/search.html</loc>
     <xhtml:link

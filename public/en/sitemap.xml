@@ -28,6 +28,45 @@
                 href="/en/archives.html"
                 />
   </url><url>
+    <loc>/en/tags/blog.html</loc>
+    <lastmod>2023-01-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/tags/blog.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/blog.html"
+                />
+  </url><url>
+    <loc>/en/categories/blog.html</loc>
+    <lastmod>2023-01-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/categories/blog.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories/blog.html"
+                />
+  </url><url>
+    <loc>/en/categories.html</loc>
+    <lastmod>2023-01-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/categories.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories.html"
+                />
+  </url><url>
     <loc>/en/</loc>
     <lastmod>2023-01-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -54,6 +93,32 @@
                 href="/en/links.html"
                 />
   </url><url>
+    <loc>/en/tags/hugo.html</loc>
+    <lastmod>2023-01-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/tags/hugo.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/hugo.html"
+                />
+  </url><url>
+    <loc>/en/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80.html</loc>
+    <lastmod>2023-01-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80.html"
+                />
+  </url><url>
     <loc>/en/page.html</loc>
     <lastmod>2023-01-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -67,34 +132,8 @@
                 href="/en/page.html"
                 />
   </url><url>
-    <loc>/en/categories.html</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/categories.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/categories.html"
-                />
-  </url><url>
-    <loc>/en/post/blog/hugo/hugo.html</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/post/blog/hugo/hugo.html"
-                />
-  </url><url>
     <loc>/en/post.html</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+    <lastmod>2023-01-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -106,21 +145,18 @@
                 href="/en/post.html"
                 />
   </url><url>
-    <loc>/en/categories/test.html</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+    <loc>/en/tags.html</loc>
+    <lastmod>2023-01-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/categories/test.html"
+                href="/tags.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/categories/test.html"
+                href="/en/tags.html"
                 />
-  </url><url>
-    <loc>/en/categories/%E6%B5%8B%E8%AF%95.html</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/en/index.html</loc>
     <xhtml:link
@@ -144,18 +180,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/search.html"
-                />
-  </url><url>
-    <loc>/en/tags.html</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/tags.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags.html"
                 />
   </url>
 </urlset>

@@ -6,7 +6,7 @@ slug: blog/hugo
 image: 
 categories:
     - Blog
-tag:
+tags:
     - HuGo
     - Blog
 ---

@@ -50,7 +50,7 @@ permalinks:
     # 页面链接设置
     page: /:slug/
     # 标签链接设置
-    tag: /tag/:slug/
+    tags: /tags/:slug/
     # 分类链接设置
     category: /category/:slug/
 
