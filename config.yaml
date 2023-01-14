@@ -1,0 +1,291 @@
+relativeURLs: true
+uglyURLs: true
+# 根目录的主机名或路径，本地使用不需要配置
+# baseurl: http://localhost
+# 当前主题
+theme: hugo-theme-stack
+# 页面显示文章数
+paginate: 5
+
+# 国际化设置（语言设置）
+languages:
+    # 简体中文配置
+    zh-cn:
+        # 语言选择中显示的标题
+        languageName: 简体中文
+        # 博客名称设置
+        title: 北溪入江流
+        # 博客描述
+        description: 我见青山多妩媚，料青山见我应如是。
+        # 国际化权重，1表示在语言选项中的第一个为当前配置
+        weight: 1
+    en:
+        languageName: English
+        title: focus
+        description: Follow One Cause Until Success.
+        weight: 2
+
+# 国际化支持，设置打开网页时的默认语言配置选项
+DefaultContentLanguage: zh-cn
+
+# CJK：中日韩越统一表意文字
+# #若是DefaultContentLanguage为zh-cn、ja、ko等CJK的配置，则将该配置设置为true，使.Summary和.WordCount在CJK语言中正确运行
+hasCJKLanguage: true
+
+# Disqus是一个第三方的开源留言系统
+# #若不使用可删除该配置项目
+# #若使用，将其更改为你之间的Disqus短名称
+disqusShortname: hugo-theme-stack
+
+# 谷歌提供的数据统计服务
+# #若使用，添加自己的谷歌数据统计服务ID，不使用则删除之
+googleAnalytics:
+
+# Hugo链接设置
+permalinks:
+    # 设置主页（Home）的索引，避免本地编译时无法找到主页
+    home: /index/
+    # 文章链接设置
+    post: /post/:slug/:title/
+    # 页面链接设置
+    page: /:slug/
+    # 标签链接设置
+    tag: /tag/:slug/
+    # 分类链接设置
+    category: /category/:slug/
+
+# Hugo相关内容配置
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+
+        - name: categories
+          weight: 200
+
+# Hugo MarkDown配置
+markup:
+    # goldmark：Hugo MarkDown默认库
+    goldmark:
+        renderer:
+            ## Set to true if you have HTML content inside Markdown
+            unsafe: false
+    tableOfContents:
+        endLevel: 4
+        ordered: true
+        startLevel: 2
+    highlight:
+        noClasses: false
+        codeFences: true
+        guessSyntax: true
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4
+
+# theme菜单配置
+menu:
+    # 主菜单配置，在{siteName}\content\page目录下可配置，若不需要主菜单，删除main选项即可
+    main: []
+    # 社交菜单配置
+    social:
+        -
+            # 菜单编号   
+            identifier: github
+            # 菜单名称，显示文本
+            name: GitHub
+            # 指向链接
+            url: https://github.com/focus-wind
+            params:
+                # 菜单svg图标配置
+                # #首先寻找{siteName}\assets\icons\{icon}.svg矢量图，建议将自己所需的矢量图放在该文件夹下
+                # #找不到则寻找{themeName}\assets\icons\{icon}.svg矢量图
+                # #hugo-theme-stack主题的图标默认配色为#bababa，若下载矢量图需修改矢量图配色为#bababa，以便统一配色
+                icon: github
+                # 设置是在本页面打开还是在新标签页打开
+                newTab: true
+        -
+            identifier: mail
+            name: Mail
+            url: mailto:focus-wind@foxmail.com
+            params:
+                icon: mail
+                newTab: true
+        -
+            identifier: yuque
+            name: YuQue
+            url: https://www.yuque.com/focus_wind
+            params:
+                icon: yuque
+                newTab: true
+
+# theme主题配置
+params:
+    # 文章放置路径
+    mainSections:
+        - post
+    featuredImageField: image
+    rssFullContent: true
+    # 网站ico设置
+    favicon:  
+    # 日期格式设置
+    dateFormat:
+        # 文章发布时间
+        published: 2006/01/02
+        # 最后修改日期，UTC：世界标准时间
+        lastUpdated: 2006/01/02 15:04(UTC) UTC
+    # 侧边栏设置
+    sidebar:
+        # 侧边栏副标题
+        subtitle: 我见青山多妩媚，料青山见我应如是 | Follow One Cause Until Success
+        avatar:
+            enabled: true
+            local: true
+            # 头像设置
+            src: img/avatar.png
+        # 紧凑模式
+        compact: false
+    #　页脚设置
+    footer:
+        # 创建网站的年份
+        since: 2023
+        # 页脚显示文字
+        customText: 
+    # 文章设置
+    article:
+        # 设置对KaTeX的支持
+        math: true
+        # 文章目录显示
+        toc: true
+        # 文章预计阅读时间显示
+        readingTime: true
+        # 文章许可证设置
+        license:
+            enabled: true
+            default: Licensed under CC BY-NC-SA 4.0
+    # 评论系统设置
+    comments:
+        enabled: true
+        provider: disqus
+
+        disqusjs:
+            shortname:
+            apiUrl:
+            apiKey:
+            admin:
+            adminLabel:
+
+        utterances:
+            repo:
+            issueTerm: pathname
+            label:
+
+        remark42:
+            host:
+            site:
+            locale:
+
+        vssue:
+            platform:
+            owner:
+            repo:
+            clientId:
+            clientSecret:
+            autoCreateIssue: false
+
+        # Waline client configuration see: https://waline.js.org/en/reference/component.html
+        waline:
+            serverURL:
+            lang:
+            pageview:
+            emoji:
+                - https://unpkg.com/@waline/emojis@1.0.1/weibo
+            requiredMeta:
+                - name
+                - email
+                - url
+            locale:
+                admin: Admin
+                placeholder:
+
+        twikoo:
+            envId:
+            region:
+            path:
+            lang:
+
+        # See https://cactus.chat/docs/reference/web-client/#configuration for description of the various options
+        cactus:
+            defaultHomeserverUrl: "https://matrix.cactus.chat:8448"
+            serverName: "cactus.chat"
+            siteName: "" # You must insert a unique identifier here matching the one you registered (See https://cactus.chat/docs/getting-started/quick-start/#register-your-site)
+
+        giscus:
+            repo:
+            repoID:
+            category:
+            categoryID:
+            mapping:
+            lightTheme:
+            darkTheme:
+            reactionsEnabled: 1
+            emitMetadata: 0
+
+        gitalk:
+            owner:
+            admin:
+            repo:
+            clientID:
+            clientSecret:
+
+        cusdis:
+            host:
+            id:
+    # 部件设置
+    widgets:
+        # 主页部件设置
+        homepage:
+            - type: search
+            - type: archives
+              params:
+                  limit: 5
+            - type: categories
+              params:
+                  limit: 10
+            - type: tag-cloud
+              params:
+                  limit: 10
+        # 文章界面部件设置
+        page:
+            - type: search
+            - type: toc
+    # 开放图谱协议
+    opengraph:
+        twitter:
+            # Your Twitter username
+            site:
+
+            # Available values: summary, summary_large_image
+            card: summary_large_image
+    # 默认图像，设置opengraph和twitter的图像
+    defaultImage:
+        opengraph:
+            enabled: false
+            local: false
+            src:
+    # 配色方案设置
+    colorScheme:
+        # 设置是否允许切换配色方案
+        toggle: true
+        # 可选项：auto、light、dark
+        default: auto
+    # 图像处理设置
+    imageProcessing:
+        cover:
+            enabled: true
+        content:
+            enabled: true
+
