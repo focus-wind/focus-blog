@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on 北溪入江流</title>
-        <link>http://localhost/categories/</link>
+        <link>/categories/</link>
         <description>Recent content in Categories on 北溪入江流</description>
         <generator>Hugo -- gohugo.io</generator>
-        <lastBuildDate>Wed, 01 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 01 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>博客</title>
-        <link>http://localhost/categories/blog/</link>
+        <link>/categories/blog/</link>
         <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost/categories/blog/</guid>
-        <description>&lt;img src="http://localhost/categories/blog/blog.jpg" alt="Featured image of post 博客" /&gt;</description>
+        <guid>/categories/blog/</guid>
+        <description>&lt;img src="/categories/blog/blog.jpg" alt="Featured image of post 博客" /&gt;</description>
         </item>
         
     </channel>
