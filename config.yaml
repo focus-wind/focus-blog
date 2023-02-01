@@ -1,7 +1,7 @@
 # relativeURLs: true
 # uglyURLs: true
 # 根目录的主机名或路径，本地使用不需要配置
-# baseurl: http://localhost
+baseurl: http://localhost
 # 当前主题
 theme: hugo-theme-stack
 # 页面显示文章数
@@ -72,7 +72,7 @@ markup:
     goldmark:
         renderer:
             ## Set to true if you have HTML content inside Markdown
-            unsafe: false
+            unsafe: true
     tableOfContents:
         endLevel: 4
         ordered: true

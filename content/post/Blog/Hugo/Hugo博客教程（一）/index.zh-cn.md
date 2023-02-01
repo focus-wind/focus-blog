@@ -116,7 +116,10 @@ tags:
 
         在Windows的系统环境变量配置中，添加存放Hugo.exe文件的文件夹，确定之后即可在其他任意地方运行Hugo命令而不是仅在安装位置运行。
 
-<img src="./asset/images/Windows下Hugo环境变量配置.png" title="" alt="Windows下Hugo环境变量配置" data-align="center">
+<div style="text-align: center;">
+    <img src="./Windows下Hugo环境变量配置.png" title="" alt="Windows下Hugo环境变量配置">
+</div>
+
 
 ### Linux系统的安装与配置
 

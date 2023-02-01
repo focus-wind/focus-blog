@@ -2,147 +2,144 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/tags/blog/</loc>
+    <loc>http://localhost/tags/blog/</loc>
     <lastmod>2023-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/categories/"
-                />
-  </url><url>
-    <loc>/tags/hugo/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%BA%8C/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/post/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
+    <loc>http://localhost/categories/</loc>
     <lastmod>2023-02-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/"
+                href="http://localhost/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/tags/"
+                href="http://localhost/categories/"
                 />
   </url><url>
-    <loc>/</loc>
+    <loc>http://localhost/tags/hugo/</loc>
+    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80/</loc>
+    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost/post/</loc>
+    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost/tags/</loc>
     <lastmod>2023-02-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/"
+                href="http://localhost/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/"
+                href="http://localhost/tags/"
                 />
   </url><url>
-    <loc>/categories/blog/</loc>
+    <loc>http://localhost/</loc>
     <lastmod>2023-02-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/categories/blog/"
+                href="http://localhost/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/categories/blog/"
+                href="http://localhost/"
                 />
   </url><url>
-    <loc>/page/</loc>
+    <loc>http://localhost/categories/blog/</loc>
+    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/en/categories/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="http://localhost/categories/blog/"
+                />
+  </url><url>
+    <loc>http://localhost/page/</loc>
     <lastmod>2023-01-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/page/"
+                href="http://localhost/en/page/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/page/"
+                href="http://localhost/page/"
                 />
   </url><url>
-    <loc>/about/</loc>
+    <loc>http://localhost/about/</loc>
     <lastmod>2023-01-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/about/"
+                href="http://localhost/en/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/about/"
+                href="http://localhost/about/"
                 />
   </url><url>
-    <loc>/archives/</loc>
+    <loc>http://localhost/archives/</loc>
     <lastmod>2023-01-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/archives/"
+                href="http://localhost/en/archives/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/archives/"
+                href="http://localhost/archives/"
                 />
   </url><url>
-    <loc>/links/</loc>
+    <loc>http://localhost/links/</loc>
     <lastmod>2023-01-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/links/"
+                href="http://localhost/en/links/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/links/"
+                href="http://localhost/links/"
                 />
   </url><url>
-    <loc>/index.html</loc>
+    <loc>http://localhost/index.html</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/index.html"
+                href="http://localhost/en/index.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/index.html"
+                href="http://localhost/index.html"
                 />
   </url><url>
-    <loc>/search/</loc>
+    <loc>http://localhost/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/search/"
+                href="http://localhost/en/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/search/"
+                href="http://localhost/search/"
                 />
   </url>
 </urlset>
