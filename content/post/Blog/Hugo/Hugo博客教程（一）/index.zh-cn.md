@@ -1,7 +1,7 @@
 ---
 title: Hugo博客教程（一）
 description: 动态博客与静态博客的解释和Hugo的安装、环境配置
-date: 2023-01-10
+date: 2023-02-01
 slug: blog/hugo
 image: 
 categories:
@@ -103,6 +103,9 @@ tags:
 
 - [Hugo安装包下载地址：Releases · gohugoio/hugo (github.com)](https://github.com/gohugoio/hugo/releases)
 
+
+在下载Hugo安装包时，有Hugo和Hugo-extended两种可运行文件下载，其中Hugo仅支持JS，Hugo-extended是Hugo的扩展版本，在支持JS的基础上还支持TS，所以在下载时建议下载Hugo-extended版本的可执行文件。
+
 ### Windows系统的安装与配置
 
         在[Hugo安装包下载地址：Releases · gohugoio/hugo (github.com)](https://github.com/gohugoio/hugo/releases)下载好Hugo.exe文件后，将Hugo.exe文件放在想要存放的位置即可，比如我这里放在`D:\Blog\Hugo`文件夹下面，此时在该文件夹下面打开cmd命令提示符即可运行Hugo的相关命令，运行命令Hugo命令实际上就是在调用Hugo.exe文件。
@@ -113,17 +116,17 @@ tags:
 
         在Windows的系统环境变量配置中，添加存放Hugo.exe文件的文件夹，确定之后即可在其他任意地方运行Hugo命令而不是仅在安装位置运行。
 
-<img src="file:///C:/Users/focus/AppData/Roaming/marktext/images/2023-01-04-20-11-29-image.png" title="" alt="" data-align="center">
+<img src="./asset/images/Windows下Hugo环境变量配置.png" title="" alt="Windows下Hugo环境变量配置" data-align="center">
 
 ### Linux系统的安装与配置
 
-        Hugo在Linux上的安装与配置和Windows类似。首先wget下载指定的Hugo压缩文件（tar.gz文件一般是Linux系统的压缩文件），以v0.109.0版本为例：
+        Hugo在Linux上的安装与配置和Windows类似。首先wget下载指定的Hugo压缩文件（tar.gz文件一般是Linux系统的压缩文件），以v0.110.0版本为例：
 
 ```shell
 # 下载指定版本的Hugo文件
-wget https://github.com/gohugoio/hugo/releases/download/v0.109.0/hugo_0.109.0_linux-amd64.tar.gz
+wget https://github.com/gohugoio/hugo/releases/download/v0.110.0/hugo_extended_0.110.0_linux-amd64.tar.gz
 # 解压tar.gz压缩文件
-tar -zxvf hugo_0.109.0_linux-amd64.tar.gz
+tar -zxvf hugo_extended_0.110.0_linux-amd64.tar.gz
 ```
 
         解压后，使用`mv`命令将可执行文件移动到想要存放的路径。
@@ -156,5 +159,5 @@ hugo version
 成功示例：
 
 ```shell
-hugo v0.109.0-47b12b83e636224e5e601813ff3e6790c191e371 windows/amd64 BuildDate=2022-12-23T10:38:11Z VendorInfo=gohugoio
+hugo v0.110.0-e32a493b7826d02763c3b79623952e625402b168+extended windows/amd64 BuildDate=2023-01-17T12:16:09Z VendorInfo=gohugoio
 ```

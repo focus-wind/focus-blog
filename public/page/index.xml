@@ -1,74 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Pages on 北溪入江流</title>
-        <link>/page/</link>
-        <description>Recent content in Pages on 北溪入江流</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/page/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>关于</title>
-        <link>/about/</link>
-        <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
-        
-        <guid>/about/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;自述&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;状况：00后，XAUT大四即将毕业生&lt;/li&gt;
-&lt;li&gt;专业：IOT&lt;/li&gt;
-&lt;li&gt;职业规划：网络安全、人工智能（不求甚解，我想未来每一个学习技术都应该会一点人工智能吧）&lt;/li&gt;
-&lt;li&gt;爱好：河图，古风音乐，假面骑士&lt;/li&gt;
-&lt;li&gt;Sign：我见青山多妩媚，料青山见我应如是。| Follow One Cause Until Success.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;博客经历&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;2020.2：第一次使用WordPress搭建博客&lt;/li&gt;
-&lt;li&gt;2021.4：长时间停更博客，因项目原因，关停博客网站&lt;/li&gt;
-&lt;li&gt;2021.7：使用Typecho重新搭建博客网站&lt;/li&gt;
-&lt;li&gt;2022.2：原服务器到期，使用Hexo重新搭建博客网站&lt;/li&gt;
-&lt;li&gt;2022.3：转回Typecho，迁移博客&lt;/li&gt;
-&lt;li&gt;2023.1：服务器到期，转为使用成本更低，更方便的静态博客Hugo&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>归档</title>
-        <link>/archives/</link>
-        <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
-        
-        <guid>/archives/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>友链</title>
-        <link>/links/</link>
-        <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
-        
-        <guid>/links/</guid>
-        <description>&lt;h1 id=&#34;莫愁前路无知己天下谁人不识君&#34;&gt;莫愁前路无知己，天下谁人不识君&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;申请友链格式（评论区或向邮箱focus-wind@foxmail.com发信）：
-如果你想成为博主的友链，请将博主的链接信息添加到你的友链当中&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;博客名：北溪入江流&lt;/li&gt;
-&lt;li&gt;博客描述：我见青山多妩媚，料青山见我应如是。&lt;/li&gt;
-&lt;li&gt;博客地址：https://focus-wind.com/&lt;/li&gt;
-&lt;li&gt;博客头像：http://focus-wind.com/&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>搜索</title>
-        <link>/search/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/search/</guid>
-        <description></description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Pages on 北溪入江流</title>
+    <link>/page/</link>
+    <description>Recent content in Pages on 北溪入江流</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于</title>
+      <link>/about/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>自述 状况：00后，XAUT大四即将毕业生 专业：IOT 职业规划：网络安全、人工智能（不求甚解，我想未来每一个学习技术都应该会一点人工智能吧） 爱</description>
+    </item>
+    
+    <item>
+      <title>归档</title>
+      <link>/archives/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>友链</title>
+      <link>/links/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/links/</guid>
+      <description>莫愁前路无知己，天下谁人不识君 申请友链格式（评论区或向邮箱focus-wind@foxmail.com发信）： 如果你想成为博主的友链，请将博</description>
+    </item>
+    
+    <item>
+      <title>搜索</title>
+      <link>/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/search/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
 </rss>

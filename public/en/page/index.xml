@@ -1,74 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Pages on focus</title>
-        <link>/en/page/</link>
-        <description>Recent content in Pages on focus</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/en/page/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>About</title>
-        <link>/en/about/</link>
-        <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
-        
-        <guid>/en/about/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;Autobiography&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;State：born after the millennium，XAUT senior year graduating&lt;/li&gt;
-&lt;li&gt;Major：IOT&lt;/li&gt;
-&lt;li&gt;Career Plan：Network Security、Artificial Intelligence（just want to know something，I think every learning technology in the future should know some artificial intelligence.）&lt;/li&gt;
-&lt;li&gt;Hobby：河图，Chinese traditional Pop Music，Kamen Rider&lt;/li&gt;
-&lt;li&gt;Sign：I see many charming Castle Peak, Castle Peak to see me as is expected（我见青山多妩媚，料青山见我应如是）| Follow One Cause Until Success.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Blog Experience&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;2020.2：The first time to use WordPress to build a blog.&lt;/li&gt;
-&lt;li&gt;2021.4：Stop blogging for a long time, shut down the blog site due to project reasons.&lt;/li&gt;
-&lt;li&gt;2021.7：Using Typecho to Rebuild Blog Website.&lt;/li&gt;
-&lt;li&gt;2022.2：The original server expired, use Hexo to rebuild the blog site.&lt;/li&gt;
-&lt;li&gt;2022.3：Migrate blog to Typecho.&lt;/li&gt;
-&lt;li&gt;2023.1：The server expires, switch to the cheaper and more convenient static blog Hugo.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>Archives</title>
-        <link>/en/archives/</link>
-        <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
-        
-        <guid>/en/archives/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Friends</title>
-        <link>/en/links/</link>
-        <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
-        
-        <guid>/en/links/</guid>
-        <description>&lt;h1 id=&#34;dont-worry-about-no-close-friends-in-your-future-life-way-every-one-will-know-about-you&#34;&gt;Don&amp;rsquo;t worry about no close friends in your future life way, every one will know about you&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Apply for friend link format（Comment area or Send a letter to &lt;a class=&#34;link&#34; href=&#34;mailto:focus-wind@foxmail.com&#34; &gt;focus-wind@foxmail.com&lt;/a&gt;）：
-If you want to become a blogger&amp;rsquo;s friend chain, please add the blogger&amp;rsquo;s link information to your friend chain&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;Title：focus&lt;/li&gt;
-&lt;li&gt;Description：Follow One Cause Until Success.&lt;/li&gt;
-&lt;li&gt;WebSite：https://focus-wind.com/&lt;/li&gt;
-&lt;li&gt;AvatarURL：http://focus-wind.com/&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>Search</title>
-        <link>/en/search/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/en/search/</guid>
-        <description></description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Pages on focus</title>
+    <link>/en/page/</link>
+    <description>Recent content in Pages on focus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/en/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>/en/about/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/en/about/</guid>
+      <description>Autobiography State：born after the millennium，XAUT senior year graduating Major：IOT Career Plan：Network Security、Artifici</description>
+    </item>
+    
+    <item>
+      <title>Archives</title>
+      <link>/en/archives/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/en/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Friends</title>
+      <link>/en/links/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/en/links/</guid>
+      <description>Don&amp;rsquo;t worry about no close friends in your future life way, every one will know about you Apply for friend link format（Comment area or Send a letter to focus-wind@foxmail.com）： If you want to become a blogger&amp;rsquo;s friend chain, please add the blogger&amp;rsquo;s link information to your friend chain
+Title：focus Description：Follow One Cause Until Success. WebSite：https://focus-wind.com/ AvatarURL：http://focus-wind.com/ </description>
+    </item>
+    
+    <item>
+      <title>Search</title>
+      <link>/en/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/search/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
 </rss>
