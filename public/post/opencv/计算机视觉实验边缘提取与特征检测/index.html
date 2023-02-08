@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='计算机视觉实验：边缘提取与特征检测'>
+<title>计算机视觉实验：边缘提取与特征检测</title>
+
+<link rel='canonical' href='/post/opencv/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%AE%9E%E9%AA%8C%E8%BE%B9%E7%BC%98%E6%8F%90%E5%8F%96%E4%B8%8E%E7%89%B9%E5%BE%81%E6%A3%80%E6%B5%8B/'>
+
+<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='计算机视觉实验：边缘提取与特征检测'>
+<meta property='og:description' content='计算机视觉实验：边缘提取与特征检测'>
+<meta property='og:url' content='/post/opencv/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%AE%9E%E9%AA%8C%E8%BE%B9%E7%BC%98%E6%8F%90%E5%8F%96%E4%B8%8E%E7%89%B9%E5%BE%81%E6%A3%80%E6%B5%8B/'>
+<meta property='og:site_name' content='北溪入江流'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='OpenCv' /><meta property='article:tag' content='Python' /><meta property='article:published_time' content='2022-11-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-11-16T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="计算机视觉实验：边缘提取与特征检测">
+<meta name="twitter:description" content="计算机视觉实验：边缘提取与特征检测">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu5573819e39520df65cd1f93c344d2112_156234_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">北溪入江流</a></h1>
+            <h2 class="site-description">我见青山多妩媚，料青山见我应如是 | Follow One Cause Until Success</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/focus-wind'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1673241332583" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9125" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9 23.5 23.2 38.1 55.4 38.1 91v112.5c0.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z" p-id="9126" fill="#bababa"></path></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:focus-wind@foxmail.com'
+                        target="_blank"
+                        title="Mail"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1673240954326" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8668" width="200" height="200" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32z m-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5z" fill="#bababa" p-id="8669"></path><path d="M833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6c20.2 15.7 48.5 15.7 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z" p-id="8670" fill="#bababa"></path></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.yuque.com/focus_wind'
+                        target="_blank"
+                        title="YuQue"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1673241533996" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1614" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M854.6 370.6c-9.9-39.4 9.9-102.2 73.4-124.4l-67.9-3.6s-25.7-90-143.6-98c-117.8-8.1-194.9-3-195-3 0.1 0 87.4 55.6 52.4 154.7-25.6 52.5-65.8 95.6-108.8 144.7-1.3 1.3-2.5 2.6-3.5 3.7C319.4 605 96 860 96 860c245.9 64.4 410.7-6.3 508.2-91.1 20.5-0.2 35.9-0.3 46.3-0.3 135.8 0 250.6-117.6 245.9-248.4-3.2-89.9-31.9-110.2-41.8-149.6z m-204.1 334c-10.6 0-26.2 0.1-46.8 0.3l-23.6 0.2-17.8 15.5c-47.1 41-104.4 71.5-171.4 87.6-52.5 12.6-110 16.2-172.7 9.6 18-20.5 36.5-41.6 55.4-63.1 92-104.6 173.8-197.5 236.9-268.5l1.4-1.4 1.3-1.5c4.1-4.6 20.6-23.3 24.7-28.1 9.7-11.1 17.3-19.9 24.5-28.6 30.7-36.7 52.2-67.8 69-102.2l1.6-3.3 1.2-3.4c13.7-38.8 15.4-76.9 6.2-112.8 22.5 0.7 46.5 1.9 71.7 3.6 33.3 2.3 55.5 12.9 71.1 29.2 5.8 6 10.2 12.5 13.4 18.7 1 2 1.7 3.6 2.3 5l5 17.7c-15.7 34.5-19.9 73.3-11.4 107.2 3 11.8 6.9 22.4 12.3 34.4 2.1 4.7 9.5 20.1 11 23.3 10.3 22.7 15.4 43 16.7 78.7 3.3 94.6-82.7 181.9-182 181.9z" p-id="1615" fill="#bababa"></path></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/index.html' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="/" selected>简体中文</option>
+                        
+                            <option value="/en/" >English</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                <form action="/search/" class="search-form widget" >
+        <p>
+            <label>搜索</label>
+            <input name="keyword" required placeholder="输入关键词..." />
+        
+            <button title="搜索">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+            
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#一边缘提取">（一）边缘提取</a>
+      <ol>
+        <li><a href="#1卷积算子">（1）卷积算子</a>
+          <ol>
+            <li><a href="#arobert交叉算子">a：robert交叉算子</a></li>
+            <li><a href="#bprewitt算子">b：prewitt算子</a></li>
+            <li><a href="#csobel算子">c：sobel算子</a></li>
+            <li><a href="#dlaplacian算子">d：laplacian算子</a></li>
+          </ol>
+        </li>
+        <li><a href="#2实验代码">（2）实验代码</a></li>
+      </ol>
+    </li>
+    <li><a href="#二特征点检测">（二）特征点检测</a>
+      <ol>
+        <li><a href="#1实验代码">（1）实验代码</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#一边缘提取-1">（一）边缘提取</a>
+      <ol>
+        <li><a href="#1实验原图">（1）实验原图</a></li>
+        <li><a href="#2robert算子">（2）robert算子</a></li>
+        <li><a href="#3prewitt算子">（3）prewitt算子</a></li>
+        <li><a href="#3sobel算子">（3）sobel算子</a></li>
+        <li><a href="#4laplacian算子">（4）laplacian算子</a></li>
+        <li><a href="#5综合对比">（5）综合对比</a></li>
+      </ol>
+    </li>
+    <li><a href="#二特征点检测-1">（二）特征点检测</a>
+      <ol>
+        <li><a href="#1实验原图-1">（1）实验原图</a></li>
+        <li><a href="#2susan特征点检测">（2）susan特征点检测</a></li>
+        <li><a href="#3harris特征点检测">（3）harris特征点检测</a></li>
+        <li><a href="#4sift特征点检测">（4）sift特征点检测</a></li>
+        <li><a href="#5综合对比-1">（5）综合对比</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/opencv/" >
+                OpenCv
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/opencv/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%AE%9E%E9%AA%8C%E8%BE%B9%E7%BC%98%E6%8F%90%E5%8F%96%E4%B8%8E%E7%89%B9%E5%BE%81%E6%A3%80%E6%B5%8B/">计算机视觉实验：边缘提取与特征检测</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            计算机视觉实验：边缘提取与特征检测
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2022/11/16</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 4 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="一实验内容">一：实验内容</h1>
+<ol>
+<li>掌握python进行图像处理、了解opencv-python库的使用</li>
+<li>基于robert、prewitt、sobel算子完成图像边缘提取</li>
+<li>了解SUSAN、Harris、SIFT算子的特征检测</li>
+</ol>
+<h1 id="二实验过程">二：实验过程</h1>
+<h2 id="一边缘提取">（一）边缘提取</h2>
+<h3 id="1卷积算子">（1）卷积算子</h3>
+<h4 id="arobert交叉算子">a：robert交叉算子</h4>
+<div style="text-align: center;">
+    <img src="./robert交叉算子.png" title="" alt="robert交叉算子">
+</div>
+<h4 id="bprewitt算子">b：prewitt算子</h4>
+<div style="text-align: center;">
+    <img src="./prewitt算子.png" title="" alt="prewitt算子">
+</div>
+<h4 id="csobel算子">c：sobel算子</h4>
+<div style="text-align: center;">
+    <img src="./sobel算子.png" title="" alt="sobel算子">
+</div>
+<h4 id="dlaplacian算子">d：laplacian算子</h4>
+<div style="text-align: center;">
+    <img src="./laplacian算子.png" title="" alt="laplacian算子">
+</div>
+<h3 id="2实验代码">（2）实验代码</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cv2</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">_edge_extraction</span><span class="p">(</span><span class="n">img</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">kernel_method</span><span class="o">=</span><span class="s1">&#39;robert&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    边缘提取
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param img: 需要进行边缘提取的图，COLOR：BGR
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param kernel_method: 边缘提取算子名称，全小写
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :return: x方向（0.5x）和y方向（0.5y）边缘提取的加权和
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 转换为灰度图</span>
+</span></span><span class="line"><span class="cl">    <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 边缘提取算子</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="s1">&#39;robert&#39;</span> <span class="o">==</span> <span class="n">kernel_method</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kernel_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kernel_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="s1">&#39;prewitt&#39;</span> <span class="o">==</span> <span class="n">kernel_method</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kernel_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kernel_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="s1">&#39;sobel&#39;</span> <span class="o">==</span> <span class="n">kernel_method</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kernel_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kernel_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="s1">&#39;laplacian&#39;</span> <span class="o">==</span> <span class="n">kernel_method</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kernel_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kernel_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kernel_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kernel_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 进行边缘提取</span>
+</span></span><span class="line"><span class="cl">    <span class="n">filter_x</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="n">ddepth</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="n">kernel_x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">filter_y</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="n">ddepth</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="n">kernel_y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># x方向和y方向加权</span>
+</span></span><span class="line"><span class="cl">    <span class="n">img_add_weight</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">addWeighted</span><span class="p">(</span><span class="n">filter_x</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">filter_y</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">img_add_weight</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">image_show</span><span class="p">(</span><span class="n">img</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;img&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    显示图片
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param img:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param title:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :return:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv2</span><span class="o">.</span><span class="n">namedWindow</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">edge_extraction</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">kernel_method</span><span class="o">=</span><span class="s1">&#39;robert&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 读取图片</span>
+</span></span><span class="line"><span class="cl">    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imdecode</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_COLOR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 边缘提取</span>
+</span></span><span class="line"><span class="cl">    <span class="n">img_extraction</span> <span class="o">=</span> <span class="n">_edge_extraction</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">kernel_method</span><span class="o">=</span><span class="n">kernel_method</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 显示图片</span>
+</span></span><span class="line"><span class="cl">    <span class="n">image_show</span><span class="p">(</span><span class="n">img_extraction</span><span class="p">,</span> <span class="n">kernel_method</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="二特征点检测">（二）特征点检测</h2>
+<h3 id="1实验代码">（1）实验代码</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cv2</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">feature_point_detection_susan</span><span class="p">(</span><span class="n">img</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    susan特征点检测
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param img:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :return:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># susan算子</span>
+</span></span><span class="line"><span class="cl">    <span class="n">susan_operator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">susan_operator</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">susan_operator</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">susan_operator</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">susan_operator</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">susan_operator</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">susan_operator</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">susan_operator</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">susan_operator</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">susan_operator</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">susan_operator</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">susan_operator</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">susan_operator</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">dst</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 检测阈值</span>
+</span></span><span class="line"><span class="cl">    <span class="n">threshold</span> <span class="o">=</span> <span class="mi">37</span> <span class="o">/</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 像素偏差阈值</span>
+</span></span><span class="line"><span class="cl">    <span class="n">t</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">dst</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">3</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">dst</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">3</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># ir：中心位置像素，ir0周边位置像素</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 获取矩形区域</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ir</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dst</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">3</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">4</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">3</span><span class="p">:</span><span class="n">j</span> <span class="o">+</span> <span class="mi">4</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 使用susan算子截取圆形区域</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ir</span> <span class="o">=</span> <span class="n">ir</span><span class="p">[</span><span class="mi">1</span> <span class="o">==</span> <span class="n">susan_operator</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ir0</span> <span class="o">=</span> <span class="n">dst</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 平滑曲线相似变换：c = e的[-((ir - ir0)/6))的6次方]的次方，表示相似还是不相似</span>
+</span></span><span class="line"><span class="cl">            <span class="n">similarity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">ir</span> <span class="o">-</span> <span class="n">ir0</span><span class="p">)</span> <span class="o">/</span> <span class="n">t</span><span class="p">)</span> <span class="o">**</span> <span class="mi">6</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 小于阈值，提取特征点</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">similarity</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">255</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">img</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">feature_point_detection_harris</span><span class="p">(</span><span class="n">img</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    harris特征点检测
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param img:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :return:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 转换为灰度图</span>
+</span></span><span class="line"><span class="cl">    <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Harris特征点检测</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 检测窗口大小</span>
+</span></span><span class="line"><span class="cl">    <span class="n">block_size</span> <span class="o">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Sobel的卷积核</span>
+</span></span><span class="line"><span class="cl">    <span class="n">k_size</span> <span class="o">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 权重系数</span>
+</span></span><span class="line"><span class="cl">    <span class="n">k</span> <span class="o">=</span> <span class="mf">0.04</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dst</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cornerHarris</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="n">block_size</span><span class="p">,</span> <span class="n">k_size</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 在原图上绘制关键点</span>
+</span></span><span class="line"><span class="cl">    <span class="n">img</span><span class="p">[</span><span class="n">dst</span> <span class="o">&gt;</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">dst</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">img</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">feature_point_detection_sift</span><span class="p">(</span><span class="n">img</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    sift特征点检测
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param img:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :return:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 转换为灰度图</span>
+</span></span><span class="line"><span class="cl">    <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 创建SIFT对象</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sift</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">SIFT_create</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># SIFT关键点检测</span>
+</span></span><span class="line"><span class="cl">    <span class="n">kernel_point</span> <span class="o">=</span> <span class="n">sift</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 在原图绘制关键点</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv2</span><span class="o">.</span><span class="n">drawKeypoints</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="n">kernel_point</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">img</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">image_show</span><span class="p">(</span><span class="n">img</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;img&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    显示图片
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param img:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param title:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :return:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv2</span><span class="o">.</span><span class="n">namedWindow</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">feature_point</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">kernel_method</span><span class="o">=</span><span class="s1">&#39;susan&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 读取图片</span>
+</span></span><span class="line"><span class="cl">    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imdecode</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_COLOR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 特征检测</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="s1">&#39;susan&#39;</span> <span class="o">==</span> <span class="n">kernel_method</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">img_feature_point</span> <span class="o">=</span> <span class="n">feature_point_detection_susan</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="s1">&#39;harris&#39;</span> <span class="o">==</span> <span class="n">kernel_method</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">img_feature_point</span> <span class="o">=</span> <span class="n">feature_point_detection_harris</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="s1">&#39;sift&#39;</span> <span class="o">==</span> <span class="n">kernel_method</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">img_feature_point</span> <span class="o">=</span> <span class="n">feature_point_detection_sift</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">img_feature_point</span> <span class="o">=</span> <span class="n">feature_point_detection_susan</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 显示图片</span>
+</span></span><span class="line"><span class="cl">    <span class="n">image_show</span><span class="p">(</span><span class="n">img_feature_point</span><span class="p">,</span> <span class="n">kernel_method</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="三实验结果及分析">三：实验结果及分析</h1>
+<h2 id="一边缘提取-1">（一）边缘提取</h2>
+<h3 id="1实验原图">（1）实验原图</h3>
+<div style="text-align: center;">
+    <img src="./image.jpeg" title="" alt="image">
+</div>
+<h3 id="2robert算子">（2）robert算子</h3>
+<div style="text-align: center;">
+    <img src="./robert交叉算子实验结果.png" title="" alt="robert交叉算子实验结果">
+</div>
+提取时间：0.0020003318786621094
+<h3 id="3prewitt算子">（3）prewitt算子</h3>
+<div style="text-align: center;">
+    <img src="./prewitt算子实验结果.png" title="" alt="prewitt算子实验结果">
+</div>
+提取时间：0.0010013580322265625
+<h3 id="3sobel算子">（3）sobel算子</h3>
+<div style="text-align: center;">
+    <img src="./sobel算子实验结果.png" title="" alt="sobel算子实验结果">
+</div>
+提取时间：0.002001523971557617
+<h3 id="4laplacian算子">（4）laplacian算子</h3>
+<div style="text-align: center;">
+    <img src="./laplacian算子实验结果.png" title="" alt="laplacian算子实验结果">
+</div>
+提取时间：0.001997232437133789
+<h3 id="5综合对比">（5）综合对比</h3>
+<div style="text-align: center;">
+    <img src="./特征检测综合对比图.png" title="" alt="特征检测综合对比图">
+</div>
+<ul>
+<li>robert提取时间：0.0020003318786621094</li>
+<li>prewitt提取时间：0.0010013580322265625</li>
+<li>sobel提取时间：0.002001523971557617</li>
+<li>laplacian提取时间：0.001997232437133789</li>
+</ul>
+<p>通过上图可以看出，laplacian二阶算子的边缘提取算子的提取效果明显优于robert，prewitt，sobel等一阶算子。且一阶算子和二阶算子在提取的时间上和算法的复杂度上相差不大，所以在实验中，如果有特征提取需求的话，可以尽量多采用二阶算子进行边缘提取。</p>
+<h2 id="二特征点检测-1">（二）特征点检测</h2>
+<h3 id="1实验原图-1">（1）实验原图</h3>
+<div style="text-align: center;">
+    <img src="./chess.png" title="" alt="实验原图">
+</div>
+<h3 id="2susan特征点检测">（2）susan特征点检测</h3>
+<div style="text-align: center;">
+    <img src="./susan.png" title="" alt="susan特征点检测">
+</div>
+<h3 id="3harris特征点检测">（3）harris特征点检测</h3>
+<div style="text-align: center;">
+    <img src="./harris.png" title="" alt="harris特征点检测">
+</div>
+<h3 id="4sift特征点检测">（4）sift特征点检测</h3>
+<div style="text-align: center;">
+    <img src="./sift.png" title="" alt="sift特征点检测">
+</div>
+<h3 id="5综合对比-1">（5）综合对比</h3>
+<div style="text-align: center;">
+    <img src="./特征点检测综合对比.png" title="" alt="特征点检测综合对比">
+</div>
+<p>在实验中，因为opencv不提供（或本人没有找到）有关susan的特征点检测的函数，所以susan特征点检测是自己写的，相比于其他特征点检测直接调用底层库较慢。在三个检测图片中，可以发现sift特征点检测检测到的特征点更多，其他检测是边缘特征点，二sift不仅检测了边缘特征点，也检测出了中心特征点。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/opencv/">OpenCv</a>
+        
+            <a href="/tags/python/">Python</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/opencv/%E8%A7%86%E9%A2%91%E6%B5%81%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">视频流传输协议</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/opencv/%E5%9F%BA%E4%BA%8Eopencv%E7%9A%84%E8%A7%86%E9%A2%91%E6%B5%81%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">基于OpenCv的视频流处理方法</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/opencv/opencv-cv2.imshow%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87%E4%B8%8D%E5%85%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCv-cv2.imshow()显示图片不全</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/opencv/%E5%9F%BA%E4%BA%8Eopencv-django%E7%9A%84%E7%BD%91%E7%BB%9C%E5%AE%9E%E6%97%B6%E8%A7%86%E9%A2%91%E6%B5%81%E4%BC%A0%E8%BE%93%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">基于OpenCv&#43;Django的网络实时视频流传输（前后端分离）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/opencv/opencv%E8%AF%BB%E5%8F%96%E4%B8%AD%E6%96%87%E8%B7%AF%E5%BE%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCv读取中文路径</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2023 北溪入江流
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
