@@ -5,7 +5,84 @@
         <link>/tags/python/</link>
         <description>Recent content in Python on 北溪入江流</description>
         <generator>Hugo -- gohugo.io</generator>
-        <lastBuildDate>Fri, 03 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 15 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>视频流传输协议</title>
+        <link>/post/opencv/%E8%A7%86%E9%A2%91%E6%B5%81%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE/</link>
+        <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
+        
+        <guid>/post/opencv/%E8%A7%86%E9%A2%91%E6%B5%81%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE/</guid>
+        <description>&lt;h1 id=&#34;常见视频传输协议&#34;&gt;常见视频传输协议&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;协议&lt;/th&gt;
+&lt;th&gt;httpflv&lt;/th&gt;
+&lt;th&gt;rtmp&lt;/th&gt;
+&lt;th&gt;rtsp&lt;/th&gt;
+&lt;th&gt;hls&lt;/th&gt;
+&lt;th&gt;dash&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;传输方式&lt;/td&gt;
+&lt;td&gt;http流&lt;/td&gt;
+&lt;td&gt;tcp流&lt;/td&gt;
+&lt;td&gt;tcp流&lt;/td&gt;
+&lt;td&gt;http&lt;/td&gt;
+&lt;td&gt;http&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;视频封装格式&lt;/td&gt;
+&lt;td&gt;flv&lt;/td&gt;
+&lt;td&gt;flv tag&lt;/td&gt;
+&lt;td&gt;ts mp4&lt;/td&gt;
+&lt;td&gt;Ts文件&lt;/td&gt;
+&lt;td&gt;Mp4 3gp webm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;延时&lt;/td&gt;
+&lt;td&gt;低&lt;/td&gt;
+&lt;td&gt;低&lt;/td&gt;
+&lt;td&gt;低&lt;/td&gt;
+&lt;td&gt;高&lt;/td&gt;
+&lt;td&gt;高&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;数据分段&lt;/td&gt;
+&lt;td&gt;连续流&lt;/td&gt;
+&lt;td&gt;连续流&lt;/td&gt;
+&lt;td&gt;连续流&lt;/td&gt;
+&lt;td&gt;切片文件&lt;/td&gt;
+&lt;td&gt;切片文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Html5播放&lt;/td&gt;
+&lt;td&gt;可通过html5解封包播放(flv.js)&lt;/td&gt;
+&lt;td&gt;不支持&lt;/td&gt;
+&lt;td&gt;不支持&lt;/td&gt;
+&lt;td&gt;可通过html5解封包播放(hls.js)&lt;/td&gt;
+&lt;td&gt;如果dash文件列表是mp4webm文件，可直接播放&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;监控行业常见的视频传输协议：RTSP，RTMP（以RTSP流为主）&lt;/p&gt;
+&lt;h2 id=&#34;rtsp与rtmp比较&#34;&gt;RTSP与RTMP比较&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;RTSP：低时延，实现难度大，适合视频聊天和视频监控&lt;/li&gt;
+&lt;li&gt;RTMP：浏览器支持好，加载flash插件后能直接播放（高版本浏览器目前已禁止flash插件）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;直播常见协议rtmphttp&#34;&gt;直播常见协议：RTMP，HTTP&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;RTMP：只支持flashplayer，目前已被淘汰&lt;/li&gt;
+&lt;li&gt;HTTP：flv，m3u8，ts&lt;/li&gt;
+&lt;li&gt;flv：flash video，需要flash支持，使用flv.js可支持播放（B站视频）&lt;/li&gt;
+&lt;li&gt;m3u8：切片文件，有延迟，实时性不如RTSP协议，如果压缩过小，可能导致客户端网络原因变卡，如果压缩过大，可能导致视频延迟过高&lt;/li&gt;
+&lt;li&gt;ts：切片文件，同m3u8&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>基于OpenCv的视频流处理方法</title>
         <link>/post/opencv/%E5%9F%BA%E4%BA%8Eopencv%E7%9A%84%E8%A7%86%E9%A2%91%E6%B5%81%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/</link>
         <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
