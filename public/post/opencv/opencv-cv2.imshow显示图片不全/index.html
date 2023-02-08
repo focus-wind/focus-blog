@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='opencv-python读取中文路径'>
-<title>OpenCv读取中文路径</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='OpenCv-cv2.imshow()显示图片不全'>
+<title>OpenCv-cv2.imshow()显示图片不全</title>
 
-<link rel='canonical' href='/post/opencv/opencv%E8%AF%BB%E5%8F%96%E4%B8%AD%E6%96%87%E8%B7%AF%E5%BE%84/'>
+<link rel='canonical' href='/post/opencv/opencv-cv2.imshow%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87%E4%B8%8D%E5%85%A8/'>
 
-<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='OpenCv读取中文路径'>
-<meta property='og:description' content='opencv-python读取中文路径'>
-<meta property='og:url' content='/post/opencv/opencv%E8%AF%BB%E5%8F%96%E4%B8%AD%E6%96%87%E8%B7%AF%E5%BE%84/'>
+<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='OpenCv-cv2.imshow()显示图片不全'>
+<meta property='og:description' content='OpenCv-cv2.imshow()显示图片不全'>
+<meta property='og:url' content='/post/opencv/opencv-cv2.imshow%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87%E4%B8%8D%E5%85%A8/'>
 <meta property='og:site_name' content='北溪入江流'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='OpenCv' /><meta property='article:tag' content='Python' /><meta property='article:published_time' content='2022-03-06T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-03-06T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="OpenCv读取中文路径">
-<meta name="twitter:description" content="opencv-python读取中文路径">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='OpenCv' /><meta property='article:tag' content='Python' /><meta property='article:published_time' content='2022-05-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-05-16T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="OpenCv-cv2.imshow()显示图片不全">
+<meta name="twitter:description" content="OpenCv-cv2.imshow()显示图片不全">
     </head>
     <body class="
     article-page
@@ -309,12 +309,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/post/opencv/opencv%E8%AF%BB%E5%8F%96%E4%B8%AD%E6%96%87%E8%B7%AF%E5%BE%84/">OpenCv读取中文路径</a>
+            <a href="/post/opencv/opencv-cv2.imshow%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87%E4%B8%8D%E5%85%A8/">OpenCv-cv2.imshow()显示图片不全</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            opencv-python读取中文路径
+            OpenCv-cv2.imshow()显示图片不全
         </h3>
         
     </div>
@@ -335,7 +335,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2022/03/06</time>
+                <time class="article-time--published">2022/05/16</time>
             </div>
         
 
@@ -350,7 +350,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -365,11 +365,45 @@
     <section class="article-content">
     
     
-    <p><strong>问题：</strong> 在使用<code>cv2.imread()</code>读取含有中文路径的图片时，无法正常读取图片，读取到的内容为None。</p>
-<p><strong>原因：</strong> opencv在使用<code>cv2.imread()</code>读取图片时，只能接收ASCII码的路径参数，导致cv2在读取含有中文路径的图片时为None，无法正常读取图片。</p>
-<p><strong>解决方法：</strong> 使用<code>np.fromfile()</code>读取路径为<code>np.uint8</code>	格式，然后使用<code>cv2.imdecode()</code>读取数据，并将数据转换为图片格式。</p>
-<p><strong>cv2.imdecode()：</strong> 从指定的内存缓存中读取数据，并把数据转换(解码)成图像格式。</p>
-<p><strong>示例：</strong></p>
+    <p><strong>问题：</strong> 在使用<code>cv2.imshow()</code>显示图片时，只能显示图片的部分内容，无法完全显示图片内容。</p>
+<p><strong>原因：</strong> 查看<code>cv2.imshow()</code>函数说明可知，opencv在使用<code>cv2.imshow()</code>显示图片时，是在指定窗口中显示图片，若在调用<code>cv2.imshow()</code>函数之前，没有调用创建窗口的函数，则默认使用<code>cv2.WINDOW_AUTOSIZE</code>标记创建默认窗口，如果需要显示大于屏幕分辨率的图像，则需要在使用<code>cv2.imshow()</code>之前调用<code>cv2.namedWindow(&quot;&quot;, cv2.WINDOW_NORMAL)</code></p>
+<div style="text-align: center;">
+    <img src="./imshow函数说明.png" title="" alt="imshow函数说明">
+</div>
+<blockquote>
+<p>If the window was not created before this function, it is assumed creating a window with cv::WINDOW_AUTOSIZE.
+如果该窗口不是在此函数之前创建的，则假定使用cv:：WINDOW_AUTOSIZE创建窗口。</p>
+</blockquote>
+<p>If you need to show an image that is bigger than the screen resolution, you will need to call namedWindow(&quot;&quot;, WINDOW_NORMAL) before the imshow.
+如果需要显示大于屏幕分辨率的图像，则需要在imshow之前调用namedWindow(&quot;&quot;, WINDOW_NORMAL)。</p>
+<p><strong>解决方法：</strong> 在使用<code>cv2.imshow()</code>之前，调用<code>cv2.namedWindow()</code>函数，设置显示窗口属性。若调用<code>cv2.namedWindow()</code>函数图片仍显示不全，可调用<code>cv2.resize()</code>函数使图片的分辨率在显示屏的分辨率也可使图片完全显示。</p>
+<hr>
+<p><strong>示例：</strong>
+<strong>直接调用imshow()显示图片：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cv2</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imdecode</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\focus\Pictures\背景图片\希望之鲸.jpg&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_COLOR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div style="text-align: center;">
+    <img src="./部分显示图.png" title="" alt="部分显示图">
+</div>
+<p><strong>设置namedWindow()：</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -393,7 +427,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><div style="text-align: center;">
-    <img src="./OpenCv读取中文路径.png" title="" alt="OpenCv读取中文路径">
+    <img src="./显示全图.png" title="" alt="显示全图">
 </div>
 
 </section>
@@ -462,12 +496,12 @@
             
                 
 <article class="">
-    <a href="/post/opencv/opencv-cv2.imshow%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87%E4%B8%8D%E5%85%A8/">
+    <a href="/post/opencv/opencv%E8%AF%BB%E5%8F%96%E4%B8%AD%E6%96%87%E8%B7%AF%E5%BE%84/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">OpenCv-cv2.imshow()显示图片不全</h2>
+            <h2 class="article-title">OpenCv读取中文路径</h2>
         </div>
     </a>
 </article>

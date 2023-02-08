@@ -1,7 +1,7 @@
 ---
 title: OpenCv读取中文路径
 description: opencv-python读取中文路径
-date: 2023-02-01
+date: 2022-03-06
 slug: opencv
 image: 
 categories:
