@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>OpenCv on 北溪入江流</title>
+        <title>计算机视觉 on 北溪入江流</title>
         <link>/categories/opencv/</link>
-        <description>Recent content in OpenCv on 北溪入江流</description>
+        <description>Recent content in 计算机视觉 on 北溪入江流</description>
         <generator>Hugo -- gohugo.io</generator>
         <lastBuildDate>Wed, 16 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/opencv/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>计算机视觉实验：边缘提取与特征检测</title>

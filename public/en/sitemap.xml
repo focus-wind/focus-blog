@@ -103,6 +103,30 @@
                 href="/en/categories/"
                 />
   </url><url>
+    <loc>/en/categories/network/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/categories/network/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories/network/"
+                />
+  </url><url>
+    <loc>/en/categories/opencv/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/categories/opencv/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories/opencv/"
+                />
+  </url><url>
     <loc>/en/search/</loc>
     <xhtml:link
                 rel="alternate"

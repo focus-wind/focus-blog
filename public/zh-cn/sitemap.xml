@@ -121,11 +121,21 @@
     <loc>/tags/opencv/</loc>
     <lastmod>2022-11-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/opencv/</loc>
-    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/python/</loc>
     <lastmod>2022-11-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/opencv/</loc>
+    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories/opencv/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/categories/opencv/"
+                />
   </url><url>
     <loc>/post/opencv/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%AE%9E%E9%AA%8C%E8%BE%B9%E7%BC%98%E6%8F%90%E5%8F%96%E4%B8%8E%E7%89%B9%E5%BE%81%E6%A3%80%E6%B5%8B/</loc>
     <lastmod>2022-11-16T00:00:00+00:00</lastmod>
@@ -135,6 +145,16 @@
   </url><url>
     <loc>/categories/network/</loc>
     <lastmod>2022-10-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories/network/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/categories/network/"
+                />
   </url><url>
     <loc>/post/network/%E5%BA%94%E7%94%A8%E5%B1%82/</loc>
     <lastmod>2022-10-15T00:00:00+00:00</lastmod>
