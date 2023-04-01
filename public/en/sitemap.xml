@@ -150,5 +150,17 @@
                 hreflang="en"
                 href="/en/tags/"
                 />
+  </url><url>
+    <loc>/en/categories/versionmanagement/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/categories/versionmanagement/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories/versionmanagement/"
+                />
   </url>
 </urlset>

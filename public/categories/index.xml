@@ -14,6 +14,14 @@
         <description>&lt;img src="/categories/blog/blog.jpg" alt="Featured image of post 博客" /&gt;</description>
         </item>
         <item>
+        <title>版本管理</title>
+        <link>/categories/versionmanagement/</link>
+        <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+        
+        <guid>/categories/versionmanagement/</guid>
+        <description>&lt;img src="/categories/versionmanagement/version_management.jpg" alt="Featured image of post 版本管理" /&gt;</description>
+        </item>
+        <item>
         <title>计算机视觉</title>
         <link>/categories/opencv/</link>
         <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
