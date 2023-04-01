@@ -220,6 +220,8 @@
                 href="/index.html"
                 />
   </url><url>
+    <loc>/post/</loc>
+  </url><url>
     <loc>/search/</loc>
     <xhtml:link
                 rel="alternate"
