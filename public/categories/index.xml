@@ -6,20 +6,20 @@
         <description>Recent content in Categories on 北溪入江流</description>
         <generator>Hugo -- gohugo.io</generator>
         <lastBuildDate>Wed, 01 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>版本管理</title>
+        <link>/categories/versionmanagement/</link>
+        <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+        
+        <guid>/categories/versionmanagement/</guid>
+        <description>&lt;img src="/categories/versionmanagement/version_management.jpg" alt="Featured image of post 版本管理" /&gt;</description>
+        </item>
+        <item>
         <title>博客</title>
         <link>/categories/blog/</link>
         <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
         
         <guid>/categories/blog/</guid>
         <description>&lt;img src="/categories/blog/blog.jpg" alt="Featured image of post 博客" /&gt;</description>
-        </item>
-        <item>
-        <title>版本管理</title>
-        <link>/categories/versionmanagement/</link>
-        <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
-        
-        <guid>/categories/versionmanagement/</guid>
-        <description>&lt;img src="/categories/versionmanagement/version_management.jpg" alt="Featured image of post 版本管理" /&gt;</description>
         </item>
         <item>
         <title>计算机视觉</title>
