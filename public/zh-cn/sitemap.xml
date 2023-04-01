@@ -118,10 +118,13 @@
                 href="/links/"
                 />
   </url><url>
-    <loc>/tags/git-config/</loc>
+    <loc>/tags/gitconfig/</loc>
     <lastmod>2022-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/network/git%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE/</loc>
+    <loc>/post/version_management_git/git%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2022-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/versionmanagement/</loc>
     <lastmod>2022-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/versionmanagement/</loc>
@@ -208,6 +211,12 @@
     <loc>/post/opencv/opencv%E8%AF%BB%E5%8F%96%E4%B8%AD%E6%96%87%E8%B7%AF%E5%BE%84/</loc>
     <lastmod>2022-03-06T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/tags/gitbranch/</loc>
+    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/version_management_git/git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/index.html</loc>
     <xhtml:link
                 rel="alternate"
@@ -219,8 +228,6 @@
                 hreflang="zh-cn"
                 href="/index.html"
                 />
-  </url><url>
-    <loc>/post/</loc>
   </url><url>
     <loc>/search/</loc>
     <xhtml:link

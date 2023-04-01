@@ -2,12 +2,13 @@
 title: Git初始化配置
 description: Git初始化配置
 date: 2022-12-01
-slug: network
+slug: version_management_git
 image: 
 categories:
     - VersionManagement
 tags:
-    - Git Config
+    - GitConfig
+    - VersionManagement
 ---
 
 # Git配置
