@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Git初始化配置'>
-<title>Git初始化配置</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Git文件.gitignore和.gitkeep用法解析'>
+<title>Git文件.gitignore和.gitkeep用法解析</title>
 
-<link rel='canonical' href='/post/version_management_git/git%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE/'>
+<link rel='canonical' href='/post/version_management_git/git%E6%96%87%E4%BB%B6.gitignore%E5%92%8C.gitkeep%E7%94%A8%E6%B3%95%E8%A7%A3%E6%9E%90/'>
 
-<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='Git初始化配置'>
-<meta property='og:description' content='Git初始化配置'>
-<meta property='og:url' content='/post/version_management_git/git%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE/'>
+<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='Git文件.gitignore和.gitkeep用法解析'>
+<meta property='og:description' content='Git文件.gitignore和.gitkeep用法解析'>
+<meta property='og:url' content='/post/version_management_git/git%E6%96%87%E4%BB%B6.gitignore%E5%92%8C.gitkeep%E7%94%A8%E6%B3%95%E8%A7%A3%E6%9E%90/'>
 <meta property='og:site_name' content='北溪入江流'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='GitConfig' /><meta property='article:tag' content='VersionManagement' /><meta property='article:published_time' content='2022-12-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-12-01T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="Git初始化配置">
-<meta name="twitter:description" content="Git初始化配置">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='gitignore' /><meta property='article:tag' content='gitkeep' /><meta property='article:tag' content='VersionManagement' /><meta property='article:published_time' content='2023-03-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-03-01T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Git文件.gitignore和.gitkeep用法解析">
+<meta name="twitter:description" content="Git文件.gitignore和.gitkeep用法解析">
     </head>
     <body class="
     article-page
@@ -287,6 +287,43 @@
         
             
                 
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#gitignore工作原理">.gitignore工作原理</a></li>
+    <li><a href="#gitignore常用匹配规则">.gitignore常用匹配规则</a></li>
+    <li><a href="#本地-gitignore-规则">本地 .gitignore 规则</a>
+      <ol>
+        <li><a href="#本地代码库-gitignore-规则">本地代码库 .gitignore 规则</a></li>
+        <li><a href="#全局-gitignore-规则">全局 .gitignore 规则</a>
+          <ol>
+            <li><a href="#创建全局-gitignore-文件来进行全局-gitignore-匹配">创建全局 .gitignore 文件来进行全局 .gitignore 匹配</a></li>
+            <li><a href="#修改-gitconfig-来进行全局-gitignore-匹配">修改 .gitconfig 来进行全局 .gitignore 匹配</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#那些文件需要被过滤">那些文件需要被过滤</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
             
         
     </aside>
@@ -309,12 +346,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/post/version_management_git/git%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE/">Git初始化配置</a>
+            <a href="/post/version_management_git/git%E6%96%87%E4%BB%B6.gitignore%E5%92%8C.gitkeep%E7%94%A8%E6%B3%95%E8%A7%A3%E6%9E%90/">Git文件.gitignore和.gitkeep用法解析</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            Git初始化配置
+            Git文件.gitignore和.gitkeep用法解析
         </h3>
         
     </div>
@@ -335,7 +372,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2022/12/01</time>
+                <time class="article-time--published">2023/03/01</time>
             </div>
         
 
@@ -350,7 +387,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 4 分钟
                 </time>
             </div>
         
@@ -365,30 +402,104 @@
     <section class="article-content">
     
     
-    <h1 id="git配置">Git配置</h1>
-<p>Git 提供了一个叫做 git config 的工具，专门用来配置或读取相应的工作环境变量。
-这些环境变量，决定了 Git 在各个环节的具体工作方式和行为。这些变量具体配置在以下三个不同的地方：</p>
-<ul>
-<li><code>git/etc/gitconfig</code> 文件：系统中对所有用户都普遍适用的配置。若使用 <code>git config</code> 时用 <code>--system</code> 选项，读写的就是这个文件。</li>
-<li><code>~/.gitconfig</code> 文件：用户目录下的配置文件只适用于该用户。若使用 <code>git config</code> 时用 <code>--global</code> 选项，读写的就是这个文件。</li>
-<li>当前项目的 Git 目录中的配置文件（也就是工作目录中的 <code>.git/config</code> 文件）：这里的配置仅仅针对当前项目有效。每一个级别的配置都会覆盖上层的相同配置，所以 <code>.git/config</code> 里的配置会覆盖 <code>/etc/gitconfig</code> 中的同名变量。</li>
+    <ul>
+<li><code>.gitignore</code>：告诉 <code>git</code> 管理工具，需要忽略那些不需要被跟踪的文件或目录</li>
+<li><code>.gitkeep</code>：无意义，起到占位符的作用，<code>git</code> 在进行版本管理时，不会主动跟踪空目录，所以当项目中存在空目录的时候，<code>git</code> 会忽略空目录，如果需要将空目录上传到git仓库，一般需要在空目录下创建一个 <code>.gitkeep</code> 空文件起到占位的作用。在创建占位文件时，无意义的文件都是可以的，<code>.gitkeep</code> 文件只是一种约定俗成的规范名称而已。</li>
 </ul>
-<h1 id="配置用户信息">配置用户信息</h1>
-<p>配置个人的用户名称和电子邮件地址：</p>
+<h1 id="gitignore">.gitignore</h1>
+<h2 id="gitignore工作原理">.gitignore工作原理</h2>
+<p>在有的项目中，并不是所有的文件都需要上传到Git仓库进行版本管理的，这时我们就需要在项目中添加一个 <code>.gitignore</code> 文件告诉 <code>git</code> 那些文件或目录不需要被跟踪。</p>
+<p><code>.gitignore</code> 文件一般放在项目的根目录下对整个项目的文件进行匹配。也可以放到其他目录下，此时 <code>.gitignore</code> 文件以当前所在的路径为根路径进行模式匹配。</p>
+<p>在创建 <code>.gitignore</code> 文件之前，假如已经把一些需要忽略文件添加到 <code>git</code> 版本管理中，那么即使我们在 <code>.gitignore</code> 文件中添加了这些文件的匹配规则，此时 <code>git</code> 不会匹配这些规则，对添加的文件进行过滤，因为此时这些文件已经被 <code>git</code> 进行管理了。所以在项目创建开始时就需要养成创建 <code>.gitignore</code> 的习惯。</p>
+<h2 id="gitignore常用匹配规则">.gitignore常用匹配规则</h2>
+<ul>
+<li><code>#</code>：注释</li>
+<li><code>\</code>：转义符，使具有特殊意义的字符标识为普通字符</li>
+<li><code>!</code>：否定前缀，表示不忽略（跟踪）指定路径，可以将之前排除过滤的匹配文件再次包含进来。<code>git</code> 默认是对空目录不进行跟踪，可以使用 <code>!</code> 前缀用来管理跟踪空目录，不过跟推荐使用 <code>.gitkeep</code> 占位文件来跟踪管理空目录。</li>
+<li><code>/</code>：目录分隔符
+<ul>
+<li><code>/</code>位于开头或中间：匹配相对于 <code>.gitignore</code>的相对路径
+<ul>
+<li><code>/folder1/file1</code>：匹配相对于 <code>.gitignore</code> 所在路径根目录下单的 <code>/folder1/file1</code> 文件</li>
+<li><code>subfolder1/file1</code>：匹配相对于 <code>.gitignore</code> 所在路径的 <code>subfolder1/file1</code> 文件，无论是根目录还是某个子目录下的 <code>subfolder1/file1</code>。</li>
+</ul>
+</li>
+<li><code>/</code>位于结尾：只匹配目录，否则同时匹配目录和文件。</li>
+</ul>
+</li>
+<li><code>*</code>：通配多个字符，只能匹配到指定路径下的目录或文件，不能匹配子目录的内容。
+<ul>
+<li>如 <code>/folder1/*</code>：
+<ul>
+<li>仅能匹配到 <code>/folder1/file1</code>&hellip;，<code>/folder1/subfolder1/</code>&hellip;等文件</li>
+<li>不能匹配到 <code>/folder1/subfolder1/file1</code>&hellip;等文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>**</code>：特殊匹配符，表示匹配所有目录：
+<ul>
+<li><code>**/subfolder1</code>：匹配任意路径下的文件或目录 <code>subfolder1</code>，类似于 <code>subfolder1</code></li>
+<li><code>folder1/**/file1</code>：匹配 <code>folder1/file1</code>, <code>folder1/subfolder1/file1</code>, <code>folder1/subfolder1/subsubfolder1/file1</code>等文件或目录</li>
+<li><code>/flolder1/**</code>：匹配 <code>/flolder1</code> 路径下所有文件和目录。</li>
+</ul>
+</li>
+<li><code>?</code>：通配单个字符匹配除了<code>/</code>之外的任意单个字符</li>
+<li><code>[]</code>：范围匹配，匹配<code>[]</code> 指定范围内的任意单个字符</li>
+</ul>
+<h2 id="本地-gitignore-规则">本地 .gitignore 规则</h2>
+<p>远程代码仓库的 <code>.gitignore</code> 文件一般匹配项目中需要过滤的文件。但在实际开发中，项目组的各个成员有可能使用的IDE、编译器，开发环境等的不同，可能会导致每一个人都可能在自己本地需要一套额外的匹配过滤规则，但这套匹配过滤规则是与自己本地绑定的，而不应该上传到远程仓库。</p>
+<h3 id="本地代码库-gitignore-规则">本地代码库 .gitignore 规则</h3>
+<p>可以将自己本地的，不需要上传到仓库的 <code>.gitignore</code> 匹配规则写入在 <code>.git/info/exclude</code> 文件中</p>
+<h3 id="全局-gitignore-规则">全局 .gitignore 规则</h3>
+<p>全局 <code>.gitignore</code> 对本地的所有项目都生效</p>
+<h4 id="创建全局-gitignore-文件来进行全局-gitignore-匹配">创建全局 .gitignore 文件来进行全局 .gitignore 匹配</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config --global core.excludesfile <span class="o">{{</span>file_path<span class="o">}}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>一般情况下，推荐将全局 <code>.gitignore</code> 文件放在用户 <code>~</code> 目录下，也命名为 <code>.gitignore</code> 文件名，具体可根据实际需要进行修改。
+添加全局匹配规则时，到指定文件添加匹配规则即可。</p>
+<h4 id="修改-gitconfig-来进行全局-gitignore-匹配">修改 .gitconfig 来进行全局 .gitignore 匹配</h4>
+<p><code>.gitconfig</code> 文件一般在用户 <code>~</code> 目录下，若无此文件，创建空文件即可。</p>
+<p><code>.gitconfig</code>中写入：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;</span><span class="nv">$userName</span>$<span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;</span><span class="nv">$userEmail</span>$<span class="s2">&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>core<span class="o">]</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">excludesfile</span> <span class="o">=</span> <span class="o">{{</span>file_path<span class="o">}}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>如果使用 <code>--global</code> 选项，那么就会更改用户主目录下的配置文件，以后所有的项目都会默认使用这里配置的用户信息。
-如果要在某个特定的项目中使用其他名字或者邮箱，只要去掉 <code>--global</code> 选项重新配置即可，新的设定保存在当前项目的 <code>.git/config</code> 文件里。</p>
-<h1 id="查看配置信息">查看配置信息</h1>
-<p>使用 <code>git config --list</code> 命令可以查看当前用户的个人配置信息，若看到重复变量名，则说明它们位于不同的配置文件中。</p>
+</div><p>通过修改配置文件配置全局 .gitignore 规则，不会自动创建指定文件，需要在指定路径下创建对应的文件。</p>
+<h2 id="那些文件需要被过滤">那些文件需要被过滤</h2>
+<ul>
+<li>日志文件</li>
+<li>缓存或临时文件</li>
+<li>具有敏感信息的文件，如密码，密钥，身份信息等</li>
+<li>编译文件，如 <code>.class</code>， <code>.o</code> 等</li>
+<li>依赖目录，如 <code>/venv</code>, <code>/node_modules</code> 等</li>
+<li>编译输出文件，如 <code>/dist</code>, <code>/public</code> 等</li>
+<li>系统文件，如 <code>.DS_Store</code> 等</li>
+<li>项目目录下的压缩打包文件，如 <code>.zip</code>, <code>.tar.gz</code> 等</li>
+<li>IDE或文本编译器的配置文件，如 <code>.idea/</code>, <code>__pycache__</code> 等</li>
+<li>大量数据集</li>
+</ul>
+<p>有的人在使用 <code>git</code> 时，会将项目打包文件或项目依赖的数据集等大文件放在 <code>git</code> 中来进行版本管理，这样做是不对的，在使用 <code>git</code> 时，应满足：</p>
+<ul>
+<li>禁止push提交大文件</li>
+<li>少量多次commit</li>
+</ul>
+<h1 id="gitkeep">.gitkeep</h1>
+<p><code>git</code> 版本管理一般不会跟踪空目录，所以在上传到远程仓库时，会发现所有的空目录都不存在。但有的空目录是保持目录结构和进行未来扩展的必要目录，所以也需要将这些空目录上传到远程仓库中。</p>
+<p>根据 <code>.gitignore</code> 中的匹配规则可知，我们可以使用 <code>!</code> 来指定相应的目录进行跟踪来上传远程目录，但在 <code>.gitignore</code> 中来指定空目录跟踪，既不方便也有可能造成歧义。所以不推荐使用本方法。</p>
+<p>我们可以在空目录下创建空白的占位文件，这样该目录就不再是空目录的，<code>git</code> 也会进行相应的跟踪管理。理论上，无意义的占位文件都是可以的，开发人员一般使用 <code>.gitkeep</code> 作为空目录的占位文件，仅仅是一种约定俗成的规范。在实际项目中，可以根据项目组的要求使用指定的占位文件，若无要求，推荐使用 <code>.gitkeep</code> 保持良好的规范。</p>
 
 </section>
 
@@ -397,7 +508,9 @@
     
     <section class="article-tags">
         
-            <a href="/tags/gitconfig/">GitConfig</a>
+            <a href="/tags/gitignore/">gitignore</a>
+        
+            <a href="/tags/gitkeep/">gitkeep</a>
         
             <a href="/tags/versionmanagement/">VersionManagement</a>
         
@@ -469,12 +582,12 @@
             
                 
 <article class="">
-    <a href="/post/version_management_git/git%E6%96%87%E4%BB%B6.gitignore%E5%92%8C.gitkeep%E7%94%A8%E6%B3%95%E8%A7%A3%E6%9E%90/">
+    <a href="/post/version_management_git/git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Git文件.gitignore和.gitkeep用法解析</h2>
+            <h2 class="article-title">Git分支管理</h2>
         </div>
     </a>
 </article>
@@ -482,12 +595,12 @@
             
                 
 <article class="">
-    <a href="/post/version_management_git/git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/">
+    <a href="/post/version_management_git/git%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Git分支管理</h2>
+            <h2 class="article-title">Git初始化配置</h2>
         </div>
     </a>
 </article>

@@ -2,11 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/tags/blog/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/categories/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -17,6 +14,63 @@
                 hreflang="zh-cn"
                 href="/categories/"
                 />
+  </url><url>
+    <loc>/tags/gitignore/</loc>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/gitkeep/</loc>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/version_management_git/git%E6%96%87%E4%BB%B6.gitignore%E5%92%8C.gitkeep%E7%94%A8%E6%B3%95%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/</loc>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/tags/"
+                />
+  </url><url>
+    <loc>/tags/versionmanagement/</loc>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/versionmanagement/</loc>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories/versionmanagement/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/categories/versionmanagement/"
+                />
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/"
+                />
+  </url><url>
+    <loc>/tags/blog/</loc>
+    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/gitconfig/</loc>
     <lastmod>2023-02-01T00:00:00+00:00</lastmod>
@@ -30,53 +84,8 @@
     <loc>/post/blog/hugo/hugo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E4%B8%80/</loc>
     <lastmod>2023-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/ssh/</loc>
     <lastmod>2023-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/tags/"
-                />
-  </url><url>
-    <loc>/tags/versionmanagement/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/versionmanagement/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/categories/versionmanagement/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/categories/versionmanagement/"
-                />
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/"
-                />
   </url><url>
     <loc>/categories/blog/</loc>
     <lastmod>2023-02-01T00:00:00+00:00</lastmod>
