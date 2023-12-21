@@ -11,19 +11,21 @@ paginate: 5
 languages:
     # 简体中文配置
     zh-cn:
-        # 语言选择中显示的标题
-        languageName: 简体中文
-        # 博客名称设置
-        title: 北溪入江流
-        # 博客描述
-        description: 我见青山多妩媚，料青山见我应如是。
-        # 国际化权重，1表示在语言选项中的第一个为当前配置
-        weight: 1
+        params:
+            # 语言选择中显示的标题
+            languageName: 简体中文
+            # 博客名称设置
+            title: 北溪入江流
+            # 博客描述
+            description: 我见青山多妩媚，料青山见我应如是。
+            # 国际化权重，1表示在语言选项中的第一个为当前配置
+            weight: 1
     en:
-        languageName: English
-        title: focus
-        description: Follow One Cause Until Success.
-        weight: 2
+        params:
+            languageName: English
+            title: focus
+            description: Follow One Cause Until Success.
+            weight: 2
 
 # 国际化支持，设置打开网页时的默认语言配置选项
 DefaultContentLanguage: zh-cn
