@@ -1,41 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Categories on focus</title>
-        <link>/en/categories/</link>
-        <description>Recent content in Categories on focus</description>
-        <generator>Hugo -- gohugo.io</generator><atom:link href="/en/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Blog</title>
-        <link>/en/categories/blog/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/en/categories/blog/</guid>
-        <description>&lt;img src="/en/categories/blog/blog.jpg" alt="Featured image of post Blog" /&gt;</description>
-        </item>
-        <item>
-        <title>Network</title>
-        <link>/en/categories/network/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/en/categories/network/</guid>
-        <description>&lt;img src="/en/categories/network/network.jpg" alt="Featured image of post Network" /&gt;</description>
-        </item>
-        <item>
-        <title>OpenCv</title>
-        <link>/en/categories/opencv/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/en/categories/opencv/</guid>
-        <description>&lt;img src="/en/categories/opencv/opencv.jpg" alt="Featured image of post OpenCv" /&gt;</description>
-        </item>
-        <item>
-        <title>Version Management</title>
-        <link>/en/categories/versionmanagement/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/en/categories/versionmanagement/</guid>
-        <description>&lt;img src="/en/categories/versionmanagement/version_management.jpg" alt="Featured image of post Version Management" /&gt;</description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Categories on focus</title>
+    <link>/en/categories/</link>
+    <description>Recent content in Categories on focus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog</title>
+      <link>/en/categories/blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/en/categories/blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Network</title>
+      <link>/en/categories/network/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/en/categories/network/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenCv</title>
+      <link>/en/categories/opencv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/en/categories/opencv/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Version Management</title>
+      <link>/en/categories/versionmanagement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/en/categories/versionmanagement/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

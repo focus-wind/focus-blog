@@ -1,42 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Categories on 北溪入江流</title>
-        <link>/categories/</link>
-        <description>Recent content in Categories on 北溪入江流</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <lastBuildDate>Wed, 01 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>版本管理</title>
-        <link>/categories/versionmanagement/</link>
-        <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
-        
-        <guid>/categories/versionmanagement/</guid>
-        <description>&lt;img src="/categories/versionmanagement/version_management.jpg" alt="Featured image of post 版本管理" /&gt;</description>
-        </item>
-        <item>
-        <title>博客</title>
-        <link>/categories/blog/</link>
-        <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
-        
-        <guid>/categories/blog/</guid>
-        <description>&lt;img src="/categories/blog/blog.jpg" alt="Featured image of post 博客" /&gt;</description>
-        </item>
-        <item>
-        <title>计算机视觉</title>
-        <link>/categories/opencv/</link>
-        <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
-        
-        <guid>/categories/opencv/</guid>
-        <description>&lt;img src="/categories/opencv/opencv.jpg" alt="Featured image of post 计算机视觉" /&gt;</description>
-        </item>
-        <item>
-        <title>计算机网络</title>
-        <link>/categories/network/</link>
-        <pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate>
-        
-        <guid>/categories/network/</guid>
-        <description>&lt;img src="/categories/network/network.jpg" alt="Featured image of post 计算机网络" /&gt;</description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Categories on 北溪入江流</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on 北溪入江流</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 01 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>版本管理</title>
+      <link>/categories/versionmanagement/</link>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>/categories/versionmanagement/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>博客</title>
+      <link>/categories/blog/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>/categories/blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>计算机视觉</title>
+      <link>/categories/opencv/</link>
+      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>/categories/opencv/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>计算机网络</title>
+      <link>/categories/network/</link>
+      <pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>/categories/network/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

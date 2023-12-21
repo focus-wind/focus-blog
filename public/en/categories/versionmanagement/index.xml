@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Version Management on focus</title>
-        <link>/en/categories/versionmanagement/</link>
-        <description>Recent content in Version Management on focus</description>
-        <generator>Hugo -- gohugo.io</generator><atom:link href="/en/categories/versionmanagement/index.xml" rel="self" type="application/rss+xml" />
-    </channel>
+  <channel>
+    <title>Version Management on focus</title>
+    <link>/en/categories/versionmanagement/</link>
+    <description>Recent content in Version Management on focus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="/en/categories/versionmanagement/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
 </rss>
